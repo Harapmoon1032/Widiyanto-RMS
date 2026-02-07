@@ -149,6 +149,69 @@
     .scroll-indicator {
       animation: float 2s ease-in-out infinite;
     }
+
+    /* Enhanced Responsive Design */
+    @media (max-width: 640px) {
+      .ornament-line {
+        width: 120px !important;
+      }
+      body {
+        font-size: 14px;
+      }
+      .page {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .ornament-line {
+        width: 160px !important;
+      }
+      body {
+        font-size: 15px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .ornament-line {
+        width: 192px !important;
+      }
+      body {
+        font-size: 16px;
+      }
+    }
+
+    /* Touch-friendly spacing */
+    @media (hover: none) and (pointer: coarse) {
+      button, a {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
+
+    /* Optimize for iPads and tablets */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .max-w-7xl {
+        max-width: 90% !important;
+      }
+      .max-w-5xl {
+        max-width: 90% !important;
+      }
+      .max-w-4xl {
+        max-width: 90% !important;
+      }
+    }
+
+    /* Container queries for different screen sizes */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    }
     
     .menu-item {
       transition: all 0.3s ease;
@@ -372,16 +435,16 @@
     <div class="absolute bottom-4 left-4 batik-corner batik-corner-bl pointer-events-none"></div>
     <div class="absolute bottom-4 right-4 batik-corner batik-corner-br pointer-events-none"></div>
     
-    <div class="relative z-10 min-h-full w-full flex flex-col items-center justify-between px-12 py-12">
+    <div class="relative z-10 min-h-full w-full flex flex-col items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 md:py-10 lg:py-12">
      <!-- Layout Grid: Left Column (Logo, Judul, Identitas) | Right Column (Gambar Sampul) -->
-     <div class="w-full max-w-6xl grid grid-cols-2 gap-12 items-center flex-1">
+     <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center flex-1">
       
       <!-- KOLOM KIRI -->
-      <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
        
        <!-- Nomor 4: Logo UNS (Pojok Kiri Atas dalam Kolom) -->
-       <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
-        <div class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-[#FF9644] overflow-hidden">
+       <div class="animate-fade-in-up flex justify-center" style="animation-delay: 0.2s;">
+        <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-[#FF9644] overflow-hidden">
          <!-- Placeholder untuk logo UNS -->
          <img src="@8.UNS.JPG" alt="Logo UNS" class="w-full h-full object-cover"/>
         </div>
@@ -390,19 +453,19 @@
        <!-- Nomor 2: Judul Media -->
        <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
         <div class="bg-[#F0E6D2] border-2 border-[#3D2817] rounded-lg p-6">
-         <h2 class="text-2xl font-bold text-center text-[#3D2817]" style="font-family: 'Cinzel', serif;">Ensiklopedia Digital Situs Raden Mas Said</h2>
+         <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center text-[#3D2817]" style="font-family: 'Cinzel', serif;">Ensiklopedia Digital Situs Raden Mas Said</h2>
         </div>
        </div>
        
        <!-- Nomor 3: Identitas Pengembang -->
        <div class="animate-fade-in-up" style="animation-delay: 0.6s;">
-        <div class="bg-[#F0E6D2] border-2 border-[#3D2817] rounded-lg p-6 text-center">
+        <div class="bg-[#F0E6D2] border-2 border-[#3D2817] rounded-lg p-4 sm:p-5 md:p-6 text-center">
          <!-- Placeholder untuk foto pengembang -->
          <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 border-2 border-[#3D2817] flex items-center justify-center">
           <img src="" alt="Foto Pengembang" class="w-full h-full object-cover rounded-full"/>
          </div>
-         <p class="font-semibold text-[#3D2817]" style="font-family: 'Playfair Display', serif;">Nama Pengembang</p>
-         <p class="text-sm text-[#3D2817]/70">NIM: 00000000</p>
+         <p class="text-sm sm:text-base font-semibold text-[#3D2817]" style="font-family: 'Playfair Display', serif;">Nama Pengembang</p>
+         <p class="text-xs sm:text-sm text-[#3D2817]/70">NIM: 00000000</p>
         </div>
        </div>
        
@@ -410,7 +473,7 @@
       
       <!-- KOLOM KANAN: Nomor 1 - Gambar Sampul -->
       <div class="animate-fade-in-up h-full" style="animation-delay: 0.8s;">
-       <div class="bg-white border-4 border-[#3D2817] rounded-lg shadow-xl p-6 h-full min-h-96 flex items-center justify-center overflow-hidden">
+       <div class="bg-white border-4 border-[#3D2817] rounded-lg shadow-xl p-4 sm:p-5 md:p-6 h-full min-h-72 sm:min-h-80 md:min-h-96 flex items-center justify-center overflow-hidden">
         <!-- Placeholder untuk gambar sampul -->
         <img src="" alt="Gambar Sampul" class="w-full h-full object-cover"/>
         <div class="absolute text-center text-[#3D2817]/40 pointer-events-none">
@@ -422,8 +485,8 @@
      </div>
      
      <!-- Tombol MULAI PEMBELAJARAN -->
-     <div class="animate-fade-in-up mt-12" style="animation-delay: 1.0s;">
-      <button id="startBtn" class="px-20 py-3 bg-transparent border-2 border-[#3D2817] text-[#3D2817] font-semibold rounded-lg hover:bg-[#3D2817]/5 hover:shadow-lg hover:shadow-[#3D2817]/20 transition-all duration-300 card-hover cursor-pointer" style="font-family: 'Cinzel', serif;"> MULAI PEMBELAJARAN </button>
+     <div class="animate-fade-in-up mt-8 sm:mt-10 md:mt-12" style="animation-delay: 1.0s;">
+      <button id="startBtn" class="px-8 sm:px-12 md:px-16 lg:px-20 py-2 sm:py-2.5 md:py-3 bg-transparent border-2 border-[#3D2817] text-xs sm:text-sm md:text-base text-[#3D2817] font-semibold rounded-lg hover:bg-[#3D2817]/5 hover:shadow-lg hover:shadow-[#3D2817]/20 transition-all duration-300 card-hover cursor-pointer" style="font-family: 'Cinzel', serif;"> MULAI PEMBELAJARAN </button>
      </div>
     </div>
    </section><!-- Page 2: Menu Utama -->
@@ -444,59 +507,59 @@
         </svg></button>
       </div>
      </header>
-     <div class="max-w-7xl mx-auto px-6 py-12"><!-- Page Title -->
-      <div class="text-center mb-12 animate-fade-in-up">
-       <h2 class="text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">MENU UTAMA</h2>
-       <div class="ornament-line w-48 mx-auto"></div>
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12"><!-- Page Title -->
+      <div class="text-center mb-8 sm:mb-10 md:mb-12 animate-fade-in-up">
+       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">MENU UTAMA</h2>
+       <div class="ornament-line w-32 sm:w-40 md:w-48 mx-auto"></div>
       </div><!-- Menu Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!-- Kata Pengantar -->
-       <div onclick="navigateTo('page-pengantar')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.1s;">
-        <div class="w-14 h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
-         <svg class="w-8 h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"><!-- Kata Pengantar -->
+       <div onclick="navigateTo('page-pengantar')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 md:p-6 animate-fade-in-up" style="animation-delay: 0.1s;">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+         <svg class="w-6 sm:w-8 h-6 sm:h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
          </svg>
         </div>
-        <h3 class="text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Kata Pengantar</h3>
-        <p class="text-[#3D2817]/70 text-sm">Sambutan dan pengantar media pembelajaran</p>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Kata Pengantar</h3>
+        <p class="text-[#3D2817]/70 text-xs sm:text-sm">Sambutan dan pengantar media pembelajaran</p>
        </div><!-- Daftar Isi -->
-       <div onclick="navigateTo('page-daftar-isi')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <div class="w-14 h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
-         <svg class="w-8 h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+       <div onclick="navigateTo('page-daftar-isi')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 md:p-6 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+         <svg class="w-6 sm:w-8 h-6 sm:h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
          </svg>
         </div>
-        <h3 class="text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Daftar Isi</h3>
-        <p class="text-[#3D2817]/70 text-sm">Navigasi lengkap semua konten</p>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Daftar Isi</h3>
+        <p class="text-[#3D2817]/70 text-xs sm:text-sm">Navigasi lengkap semua konten</p>
        </div><!-- Pengantar Pembelajaran -->
-       <div onclick="navigateTo('page-pengantar-pembelajaran')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.3s;">
-        <div class="w-14 h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
-         <svg class="w-8 h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+       <div onclick="navigateTo('page-pengantar-pembelajaran')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 md:p-6 animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+         <svg class="w-6 sm:w-8 h-6 sm:h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
          </svg>
         </div>
-        <h3 class="text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Pengantar Pembelajaran</h3>
-        <p class="text-[#3D2817]/70 text-sm">Capaian, tujuan, dan kerangka belajar</p>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Pengantar Pembelajaran</h3>
+        <p class="text-[#3D2817]/70 text-xs sm:text-sm">Capaian, tujuan, dan kerangka belajar</p>
        </div><!-- Menu Materi -->
-       <div onclick="navigateTo('page-menu-materi')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.4s;">
-        <div class="w-14 h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
-         <svg class="w-8 h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+       <div onclick="navigateTo('page-menu-materi')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 md:p-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+         <svg class="w-6 sm:w-8 h-6 sm:h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
          </svg>
         </div>
-        <h3 class="text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Materi Pembelajaran</h3>
-        <p class="text-[#3D2817]/70 text-sm">8 modul materi tentang Raden Mas Said</p>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Materi Pembelajaran</h3>
+        <p class="text-[#3D2817]/70 text-xs sm:text-sm">8 modul materi tentang Raden Mas Said</p>
        </div><!-- Petunjuk Penggunaan -->
-       <div onclick="navigateTo('page-petunjuk')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.5s;">
-        <div class="w-14 h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
-         <svg class="w-8 h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+       <div onclick="navigateTo('page-petunjuk')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 md:p-6 animate-fade-in-up" style="animation-delay: 0.5s;">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+         <svg class="w-6 sm:w-8 h-6 sm:h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg>
         </div>
-        <h3 class="text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Petunjuk Penggunaan</h3>
-        <p class="text-[#3D2817]/70 text-sm">Panduan menggunakan media ini</p>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Petunjuk Penggunaan</h3>
+        <p class="text-[#3D2817]/70 text-xs sm:text-sm">Panduan menggunakan media ini</p>
        </div><!-- Daftar Pustaka -->
-       <div onclick="navigateTo('page-pustaka')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-6 animate-fade-in-up" style="animation-delay: 0.6s;">
-        <div class="w-14 h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
-         <svg class="w-8 h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+       <div onclick="navigateTo('page-pustaka')" class="card-hover cursor-pointer bg-gradient-to-br from-[#F0E6D2] to-[#FFFDF1] border border-[#FF9644]/30 rounded-lg p-4 sm:p-5 md:p-6 animate-fade-in-up" style="animation-delay: 0.6s;">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#FF9644]/20 rounded-lg flex items-center justify-center mb-4">
+         <svg class="w-6 sm:w-8 h-6 sm:h-8 text-[#3D2817]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
          </svg>
         </div>
-        <h3 class="text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Daftar Pustaka</h3>
-        <p class="text-[#3D2817]/70 text-sm">Sumber referensi dan kutipan</p>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#3D2817] mb-2" style="font-family: 'Playfair Display', serif;">Daftar Pustaka</h3>
+        <p class="text-[#3D2817]/70 text-xs sm:text-sm">Sumber referensi dan kutipan</p>
        </div>
       </div>
      </div>
@@ -518,7 +581,7 @@
        <div class="text-center mb-8">
         <svg class="w-16 h-16 text-[#3D2817] mx-auto mb-4" viewbox="0 0 64 64"><path d="M32 8 L40 24 L56 24 L44 36 L48 52 L32 44 L16 52 L20 36 L8 24 L24 24 Z" fill="currentColor" opacity="0.3" /> <path d="M32 16 L36 26 L46 26 L38 32 L40 42 L32 38 L24 42 L26 32 L18 26 L28 26 Z" fill="currentColor" />
         </svg>
-        <h2 class="text-3xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">KATA PENGANTAR</h2>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817]" style="font-family: 'Cinzel', serif;">KATA PENGANTAR</h2>
         <div class="ornament-line w-32 mx-auto mt-4"></div>
        </div>
        <div class="prose prose-lg text-[#3D2817]/90 space-y-6" style="font-family: 'Crimson Text', serif;">
@@ -548,7 +611,7 @@
      </header>
      <div class="max-w-4xl mx-auto px-6 py-12">
       <div class="text-center mb-12 animate-fade-in-up">
-       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PETUNJUK PENGGUNAAN</h2>
+       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PETUNJUK PENGGUNAAN</h2>
        <div class="ornament-line w-48 mx-auto"></div>
       </div>
       <div class="space-y-6"><!-- Step 1 -->
@@ -616,7 +679,7 @@
      </header>
      <div class="max-w-4xl mx-auto px-6 py-12">
       <div class="text-center mb-12 animate-fade-in-up">
-       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">DAFTAR ISI</h2>
+       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">DAFTAR ISI</h2>
        <div class="ornament-line w-48 mx-auto"></div>
       </div>
       <div class="bg-[#F0E6D2]/60 border border-[#FF9644]/30 rounded-lg overflow-hidden"><!-- Section: Pendahuluan -->
@@ -714,11 +777,11 @@
      </header>
      <div class="max-w-5xl mx-auto px-6 py-12">
       <div class="text-center mb-12 animate-fade-in-up">
-       <h2 class="text-3xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PENGANTAR PEMBELAJARAN</h2>
-       <p class="text-[#3D2817]/70">Pilih menu untuk mempelajari komponen pembelajaran</p>
+       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3D2817] mb-4" style="font-family: 'Cinzel', serif;">PENGANTAR PEMBELAJARAN</h2>
+       <p class="text-sm sm:text-base text-[#3D2817]/70">Pilih menu untuk mempelajari komponen pembelajaran</p>
        <div class="ornament-line w-48 mx-auto mt-4"></div>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
        <div onclick="navigateTo('page-capaian')" class="card-hover cursor-pointer bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-6 text-center animate-scale-in" style="animation-delay: 0.1s;">
         <div class="w-16 h-16 mx-auto bg-[#FF9644]/20 rounded-full flex items-center justify-center mb-4"><span class="text-2xl">🎯</span>
         </div>
@@ -779,7 +842,7 @@
        <div class="ornament-line w-48 mx-auto"></div>
       </div>
       <div class="bg-[#F0E6D2]/80 border border-[#FF9644]/30 rounded-lg p-8 animate-fade-in-up" style="animation-delay: 0.2s;">
-       <p class="text-lg text-[#3D2817]/90 leading-relaxed mb-6" style="font-family: 'Crimson Text', serif;">Setelah mempelajari materi ini, peserta didik diharapkan mampu:</p>
+       <p class="text-base sm:text-lg text-[#3D2817]/90 leading-relaxed mb-6" style="font-family: 'Crimson Text', serif;">Setelah mempelajari materi ini, peserta didik diharapkan mampu:</p>
        <ul class="space-y-4">
         <li class="flex items-start gap-4"><span class="flex-shrink-0 w-8 h-8 bg-[#FF9644]/20 rounded-full flex items-center justify-center text-[#3D2817] font-bold">1</span> <p class="text-[#3D2817]/80">Menganalisis latar belakang kehidupan dan perjuangan Raden Mas Said dalam konteks sejarah Kesultanan Mataram</p></li>
         <li class="flex items-start gap-4"><span class="flex-shrink-0 w-8 h-8 bg-[#FF9644]/20 rounded-full flex items-center justify-center text-[#3D2817] font-bold">2</span> <p class="text-[#3D2817]/80">Mengevaluasi strategi politik dan militer Pangeran Sambernyawa dalam perlawanan terhadap VOC</p></li>
